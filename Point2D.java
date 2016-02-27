@@ -89,9 +89,9 @@ public class Point2D extends OrderedDoublePair {
 		double shortestDist = distance(smallestToCentroid, centroid(list));
 		for(int i = 0; i < points.size(); i++){
 			getPointData = points.getUnilinkedListData();
-			if(shortestDist > distance(getPointData, OrderedDoublePair.ORIGIN)){
+			if(shortestDist > distance(getPointData, centroid(list))){
 				smallestToCentroid = getPointData;
-				shortestDist = distance(getPointData, OrderedDoublePair.ORIGIN);
+				shortestDist = distance(getPointData, centroid(list));
 			}
 		}
 		return smallestToCentroid;
