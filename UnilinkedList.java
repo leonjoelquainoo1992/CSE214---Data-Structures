@@ -57,7 +57,7 @@ public class UnilinkedList<E> {
 		private Node<E> position;
 
 		private Cursor(UnilinkedList<E> list){
-			//position = list.head;
+			position = list.head;
 			
 		}
 		
@@ -167,10 +167,9 @@ public class UnilinkedList<E> {
 	public int size(){
 		resetCursor();
 		int sizeOfList = 0;
-		while(cursor != null){
-			cursor = cursor.next;
+		for(cursor = head; cursor != null; cursor = cursor.next){
 			sizeOfList++;
-		}	
+		}
 		return sizeOfList;
 	}
 
