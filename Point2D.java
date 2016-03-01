@@ -127,7 +127,7 @@ public class Point2D extends OrderedDoublePair {
 		for(int i = 0; i < list.size(); i++){
 			pair = list.getUnilinkedListData();
 			if((pair.getX() + pair.getY()) % 2 == 0)
-				list.remove(pair);
+				list.removeAll(pair);
 		}
 		System.out.println("After removing even-summed points, the list is: "+ list.toString());
 		input.close();
