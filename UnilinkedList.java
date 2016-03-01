@@ -20,22 +20,18 @@ public class UnilinkedList<E> {
 			this.next = next;
 		}
 		
-		@SuppressWarnings("unused")
 		public E getData(){
 			return data;
 		}
 		
-		@SuppressWarnings("unused")
 		public void setData(E the_data){
 			data = the_data;
 		}
 		
-		@SuppressWarnings("unused")
 		public Node<E> getNext(){
 			return next;
 		}
 		
-		@SuppressWarnings("unused")
 		public void setNext(Node<E> node){
 			next = node;
 		}
