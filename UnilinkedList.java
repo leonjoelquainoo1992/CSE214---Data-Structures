@@ -236,26 +236,6 @@ public class UnilinkedList<E> {
 	
 	//Return a boolean and removes all instances of an element from a linked list.
 	public boolean remove(E element){
-		resetCursor();
-		Node<E> previousCursor = null;
-	      if(head == null)
-	         throw new RuntimeException();
-
-	      if( head.data.equals(element))
-	      {
-	         head = head.next;
-	      }
-	      while(cursor != null && !cursor.data.equals(element)){
-	    	  previousCursor = cursor.next;
-	    	  cursor = cursor.next;
-	      }if(cursor == null)
-	    	  throw new NullPointerException("Cannot remove");
-	      previousCursor.next = cursor.next;
-	      return true;
-	   }
-	
-	
-	public boolean remove3(E element){
     	int  i = 1;
     	Node<E> cursor = head;
     	if(indexOf(element) ==- 1)
