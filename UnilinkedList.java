@@ -120,7 +120,7 @@ public class UnilinkedList<E> {
 
 	//Auxiliary Method 
 	public boolean hasNext(){
-		return (cursor.next != null);
+		return cursor != null;
 	}
 	
 	//equals method that check whether two list and its contents are equals 
@@ -167,7 +167,7 @@ public class UnilinkedList<E> {
 	public int size(){
 		resetCursor();
 		int sizeOfList = 0;
-		for(cursor = head; cursor != null; cursor = cursor.next){
+		for(  ; cursor != null; cursor = cursor.next){
 			sizeOfList++;
 		}
 		return sizeOfList;
@@ -178,22 +178,18 @@ public class UnilinkedList<E> {
 		resetCursor();
 		int counter = 0;
 		int indexOfElement = -1;
-		while(cursor.hasNext()){
-			if(cursor.data.equals(element))
+		for(  ; cursor != null; cursor = cursor.next){
+			if(cursor.data.equals(element) || cursor.data == element)
 				indexOfElement = counter;
 			else
 				counter++;
-			cursor = cursor.next;
 		}
 		return indexOfElement;
 	}
 	
 	// Checks whether a set element is in the list
 	public boolean contains(E element){
-		if(indexOf(element) == 1)
-			return true;
-		else
-			return false;
+		return indexOf(element == 1;
 	}
 	
 	//Adds and element to the list 
