@@ -1,6 +1,5 @@
 /*
  * Name: Joel Quainoo
- * ID: 110688594
  * CSE 214 Assignment One
  */
 import java.util.NoSuchElementException;
