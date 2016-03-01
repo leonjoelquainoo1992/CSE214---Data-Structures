@@ -239,8 +239,9 @@ public class UnilinkedList<E> {
     	if(head.data == element)
     		head = head.next;
     	else{
-    		while(i <= indexOf(element)){
-             cursor = cursor.next;
+    		while(i <= size(){
+    			if(cursor.data.equals(element))
+        		       cursor = cursor.next;
     		 i++;
         }
     	  cursor.next = cursor.next.next;
@@ -250,13 +251,11 @@ public class UnilinkedList<E> {
 	
 	//Return a boolean and removes all instances of all element from a linked list.
 	public boolean removeAll(E element){
-		int size = size();
        	if(indexOf(element) ==- 1)
        		return false;
-		for(int i = 0; i < size; i++){
-			remove3(element);
+		for(int i = 0; i < size(); i++){
+			remove(element);
 		}
-		System.out.println(size);
        	return true;
     }
 	
