@@ -1,6 +1,5 @@
 /*
  * Name: Joel Quainoo
- * ID: 110688594
  * CSE_214 Homework 2;
  */
 /**
