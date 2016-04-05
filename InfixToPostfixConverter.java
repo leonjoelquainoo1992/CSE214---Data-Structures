@@ -1,5 +1,6 @@
 /*
  * Name: Joel Quainoo
+ * ID: 110688594
  * CSE_214 Homework 2;
  */
 /**
@@ -26,53 +27,57 @@ public class InfixToPostfixConverter {
 		}
 		for(int i = 0; i < infix.length; i++){
 			ch = infix[i];
-			if(Character.isDigit(ch) || Character.isLetter(ch)){
+			if(Character.isDigit(ch)){
 				postFixString += ch;
 				countOperand++;
 			}
-			else if(ch == '('){
-				countLeft++;
+			else if(ch == '(' || ch == '[' || ch == '{'){
 				stack.push(ch);
+				countLeft++;
 			}
-			else if(ch == ')'){
-				countRight++;
-				while(!stack.isEmpty() && stack.peek() != '('){
+			else if(ch == '+' || ch == '*' || ch == '/' || ch == '-'){
+				while(!stack.isEmpty() && Prec(ch) <= Prec(stack.peek()) && (stack.peek() != '(' || stack.peek() != '[' || stack.peek() != '{'))
 					postFixString += stack.pop();
-					if(!stack.isEmpty() && stack.peek() != '(')
+				stack.push(ch);
+			}	
+			else if(ch == ')' || ch == ']' || ch == '}'){
+				countRight++;
+				while(!stack.isEmpty() && stack.peek() != ')' || stack.peek() != ']' || stack.peek() != '}'){
+					postFixString += stack.pop();
+					if(stack.isEmpty() && stack.peek() != '(')
 						System.out.println("Incorrect input");
 					else
 						stack.pop();
 				}
 			}
-			else{
-				while(!stack.isEmpty() && Prec(ch) < Prec(stack.peek())){
-					postFixString += stack.pop();
-				}
-				stack.push(ch);
-			}	
+			
+			else
+				System.err.println("Invalid Expression");
 				
 		}
-		while (!stack.isEmpty())
+		while (!stack.isEmpty()){
+			if(stack.peek() != '(' || stack.peek() != '[' || stack.peek() != '{')
 		        postFixString += stack.pop();
+		}
+		
 		if(countRight > countLeft || countRight < countLeft || countOperand <= countOperator)
 			System.err.println("Wrong Expression.");
-		else
-			return postFixString;
-		return "";
+		
+		return postFixString;
 	}
 	
-	public int Prec(char ch){
+	public static int Prec(char ch){
+		int val = -1;
 		switch (ch)
 	    {
 	    case '+':
 	    case '-':
-	        return 1;
+	        val = 1;
 	 
 	    case '*':
 	    case '/':
-	        return 2;
+	        val = 2;
 	    }
-		return -1;
+		return val;
 	}
-
 }
