@@ -1,6 +1,5 @@
 /*
- * Name: Joel Quainoo
- * ID: 110688594
+ * Name: Leon Joel
  * CSE_214 Homework 2;
  */
 /**
