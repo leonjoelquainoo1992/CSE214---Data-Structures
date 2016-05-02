@@ -1,6 +1,4 @@
-/* Name: Joel Quainoo
- * CSE_214 Homework 2;
- */
+
 /** @author leonjoel
  *Stack<E> abstract data type class.
  *data variables: private Node<E> top, private int stackSize = 0;

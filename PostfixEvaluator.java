@@ -1,6 +1,8 @@
-/*
- * Name: Joel Quainoo
- * CSE_214 Homework 2;
+
+
+/**
+ * @author leonjoel
+ *
  */
 public class PostfixEvaluator {
 	Stacks<Double> operand = new Stacks<>();
@@ -43,12 +45,24 @@ public class PostfixEvaluator {
 		return ((int)(sum = operand.pop()));
 	}
 
-	public static void main(String[] args) {
-		PostfixEvaluator evaluate = new PostfixEvaluator();
+	public static void main(String[] args) throws Exception {
+		InfixToPostfixConverter fix = new InfixToPostfixConverter();
 		java.util.Scanner input = new java.util.Scanner(System.in);
-		System.out.print("Enter a postfix expression to evaluate: ");
-		char[] postfix = input.nextLine().toCharArray();
-		System.out.println("Evaluated postfix expression = "+evaluate.evaluate(postfix));
+		String in;
+		do{
+			System.out.print("Enter an infix expression to evaluate <Enter 'q' to quit: ");
+			in = input.nextLine();
+			if(in.equalsIgnoreCase("Q")){
+				System.exit(0);
+			}
+			else{
+			char[] infix = "((B O)(X K)(D Q)(C P)(N A)(G T)(R E)(T G)(Q D)(F S)(J W)(H U)(V I)(A N)(O B)(E R)(F S)(L Y)(P C)(Z M))".toCharArray();
+			String postfix = fix.convert(infix);
+			System.out.println("Post-fix from infix is "+ postfix);
+			//System.out.println("Evaluated postfix expression = "+ evaluate.evaluate(postfix.toCharArray()));
+			}
+		}
+		while(!in.equalsIgnoreCase("q") || !in.equalsIgnoreCase("Q"));
 		input.close();
 	}
 
