@@ -94,9 +94,4 @@ public class InfixToPostfixConverter {
 		return val;
 	}
 	
-	public static void main(String[] args) throws Exception{
-		char[] infix = "((BO)(XK)(DQ)(CP)(NA)(GT)(RE)(TG)(QD)(FS)(JW)(HU)(VI)(AN)(OB)(ER)(FS)(LY)(PC)(ZM))".toCharArray();
-		InfixToPostfixConverter converts = new InfixToPostfixConverter();
-		System.out.println(converts.convert(infix));
-	}
 }
