@@ -1,6 +1,6 @@
 
 /** @author leonjoel
- *Stack<E> abstract data type class.
+ *Stack<E> abstract data type class using LinkedList and Node
  *data variables: private Node<E> top, private int stackSize = 0;
  *No-arg constructor
  *Methods:
