@@ -1,6 +1,4 @@
-/**
- * Joel Quainoo
- * 110688594
+
  */import java.io.*;
 public class AlphabetStorage {
     public static void main(String[] args) throws IOException {
