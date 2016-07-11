@@ -1,7 +1,4 @@
-/*
- * Name: Joel Quainoo
- * CSE 214 Assignment One
- */
+
 import java.util.NoSuchElementException;
 
 public class UnilinkedList<E> {
