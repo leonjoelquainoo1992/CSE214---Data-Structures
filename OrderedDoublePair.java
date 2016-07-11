@@ -1,7 +1,4 @@
-/*Name: Joel Quainoo
- * CSE 214 Assignment One
- */
-/**
+
  * OrderedDoublePair.java class contains:
  	 * default constructor
  	 * 
