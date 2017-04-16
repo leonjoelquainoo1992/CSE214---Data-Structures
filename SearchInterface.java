@@ -8,8 +8,6 @@
  * <li>BinarySearch</li>
  * </ol>
  * 
- * @author Sameh A. Fakhouri
- *
  */
 public interface SearchInterface {
 		
