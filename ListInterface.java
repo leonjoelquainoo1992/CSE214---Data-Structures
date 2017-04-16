@@ -1,10 +1,4 @@
-/**
- * This interface indicates the public methods that need to be implemented for Homework 3 of
- * CMP-338, Fall 2015. 
- * 
- * @author Sameh Fakhouri
- *
- */
+
 
 public interface ListInterface<I> {
 	
