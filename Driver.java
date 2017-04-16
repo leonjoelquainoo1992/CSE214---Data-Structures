@@ -1,10 +1,8 @@
 import java.util.Arrays;
 
 public class Driver implements DriverInterface {
-	static RunTime RunTimes = new RunTime();
-	static Driver Driver = new Driver();
-	static RunTime linearSearchRunTime = new RunTime();
-	static RunTime binarySearchRunTime = new RunTime();
+	RunTime RunTimes = new RunTime();
+	Driver Driver = new Driver();
 
 	@Override
 	public int[] getListOfNumbers() {
@@ -17,16 +15,18 @@ public class Driver implements DriverInterface {
 
 	@Override
 	public int[] getTargets() {
-		int[] targetArray = { 500, 10000, 100000, 1000000, 5000000, 7500000, 10000000 };
+		int[] targetArray = {500, 10000, 100000, 1000000, 5000000, 7500000, 10000000};
 		return targetArray;
 	}
 
 	@Override
 	public RunTime runLinearSearch(int[] listOfNumbers, int target, int numberOfTimes) {
+		RunTime linearSearchRunTime = new RunTime();
 		LinearSearch linSearch = new LinearSearch();
-		for(int x = 0; x < numberOfTimes; x++){
-			for (int i = 0; i < getTargets().length; i++) {
-				linSearch.search(listOfNumbers, getTargets()[i]);
+		for(int x = 0; x < getTargets().length; x++){
+			linearSearchRunTime.resetRunTimes();
+			for (int i = 1; i <= numberOfTimes; i++) {
+				linSearch.search(listOfNumbers, getTargets()[x]);
 			}
 		}
 		return linearSearchRunTime;
@@ -35,7 +35,9 @@ public class Driver implements DriverInterface {
 	@Override
 	public RunTime runBinarySearch(int[] listOfNumbers, int target, int numberOfTimes) {
 		BinarySearch binSearch = new BinarySearch();
+		RunTime binarySearchRunTime = new RunTime();
 		for(int x = 0; x < getTargets().length; x++){
+			binarySearchRunTime.resetRunTimes();
 			for (int i = 0; i < numberOfTimes; i++) {
 				binSearch.search(listOfNumbers, getTargets()[x]);
 			}
@@ -47,9 +49,9 @@ public class Driver implements DriverInterface {
 
 		// Testing LinearSearch Class
 		System.out.println("RUNNING: LinearSearch Class...");
-		int numberOfTimes = 1;
-		for (int i = 0; i < Driver.getTargets().length; i++) {
-			Driver.runLinearSearch(Driver.getListOfNumbers(), Driver.getTargets()[i], numberOfTimes);
+		int numberOfTimes = 10;
+		for (int i = 0; i < numberOfTimes; i++) {
+			Driver.runLinearSearch(Driver.getListOfNumbers(), Driver.getTargets()[i], i);
 		}
 
 		System.out.print("RunTimes after Running Linear Search: ");
@@ -75,8 +77,8 @@ public class Driver implements DriverInterface {
 		// Testing BinarySearch Class
 		System.out.println("RUNNING: BinarySearch Class...");
 		
-		for (int i = 0; i < Driver.getTargets().length; i++) {
-			Driver.runBinarySearch(Driver.getListOfNumbers(), Driver.getTargets()[i], numberOfTimes);
+		for (int i = 0; i < numberOfTimes; i++) {
+			Driver.runBinarySearch(Driver.getListOfNumbers(), Driver.getTargets()[i], i);
 		}
 
 		System.out.print("RunTimes for Binary Search: ... ");
