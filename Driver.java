@@ -48,7 +48,7 @@ public class Driver implements DriverInterface {
 			for (int i = 0; i < numberOfTimes; i++) {
 				Driver.runLinearSearch(Driver.getListOfNumbers(), Driver.getTargets()[x], i);
 			}
-			System.out.printf(Arrays.toString(RunTimes.getRunTimes())+ "Average = " + RunTimes.getAverageRunTime());
+			System.out.println(Arrays.toString(RunTimes.getRunTimes())+ "Average = " + RunTimes.getAverageRunTime());
 			System.out.println("Last Run Time: " + RunTimes.getLastRunTime());
 		}
 
@@ -60,7 +60,7 @@ public class Driver implements DriverInterface {
 			for (int i = 0; i < numberOfTimes; i++) {
 				Driver.runBinarySearch(Driver.getListOfNumbers(), Driver.getTargets()[x], i);
 			}
-			System.out.printf(Arrays.toString(RunTimes.getRunTimes())+ "Average = " + RunTimes.getAverageRunTime());
+			System.out.println(Arrays.toString(RunTimes.getRunTimes())+ "Average = " + RunTimes.getAverageRunTime());
 			System.out.println("Last Run Time: " + RunTimes.getLastRunTime());
 		}
 	}
