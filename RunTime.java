@@ -3,7 +3,6 @@ public class RunTime  implements RuntimeInterface{
 	static long[] runTimes = new long[10]; 
 	int index = 0; 
 	
-
 	@Override
 	public long getLastRunTime() {
 		return (index >= 1) ? runTimes[index-1] : 0L;
@@ -36,7 +35,6 @@ public class RunTime  implements RuntimeInterface{
 		try{
 			return (double) sum / index;
 		}catch (ArithmeticException e){
-			System.out.println("Division by zero");
 			System.out.println(e.getMessage());
 		}
 		return 0.0;
