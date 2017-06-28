@@ -110,36 +110,15 @@ public class ArrayBasedList<E> implements Comparable<E>, ListInterface<E> {
 		size = 0; indexOfElement= 0;
 	}
 
-	@Override
-	public int compareTo(E obj) {
-		if(eComparator.compare(obj, (E) this) == 0)
-			return 0;
-		else if(eComparator.compare(obj, (E) this) >= 1)
-			return 1;
-		else
-			return -1;
-	}
-
 	//Erase
 	public void displayList(){
 		System.out.print(arrayList[0]);
 		for(int i = 1; i < arrayList.length; i++){
-			if(arrayList[i] == null)
-				continue;
-			else
+			if(arrayList[i] != null)
 				System.out.print("--->" + arrayList[i]);
+			else
+				continue;
+				
 		}
 	}
-
-	private Comparator<E> eComparator = new Comparator<E>(){
-		@Override
-		public int compare(E o1, E o2) {
-			if(o1 == o2)
-				return 0;
-			else if((Integer) o1 < (Integer)o2)
-				return 1;
-			else
-				return -1;
-		}
-	};
 }
