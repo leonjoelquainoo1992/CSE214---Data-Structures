@@ -20,16 +20,16 @@ public class UnilinkedList<E> {
 			return data;
 		}
 		
-		public void setData(E the_data){
-			data = the_data;
+		public void setData(E data){
+			this.data = data;
 		}
 		
 		public Node<E> getNext(){
 			return next;
 		}
 		
-		public void setNext(Node<E> node){
-			next = node;
+		public void setNext(Node<E> next){
+			this.next = next;
 		}
 		
 		@Override
@@ -124,7 +124,7 @@ public class UnilinkedList<E> {
 	public boolean equals(UnilinkedList<E> list){
 		if (this.size() != list.size())
 			 return false;
-		resetCursor();
+		cursor = head;
 		 for (int i = 0; i < size(); i++) {
 			 if (list.indexOf(cursor.data) != this.indexOf(cursor.data))
 				 return false;
