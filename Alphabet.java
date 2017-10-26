@@ -2,17 +2,17 @@
  * Joel Quainoo
  * @author leonjoel
  */
-public class Alphabet implements Hashable {
-	private char ch;
+public class Alphabet<E> implements Hashable<E> {
+	private E ch;
 
-	public Alphabet(char ch) {
+	public Alphabet(E ch) {
 		this.ch = ch;
 	}
 
 	/**
 	 * @return the value of the class field - ch
 	 */
-	public char getCh() {
+	public E getCh() {
 		return ch;
 	}
 
