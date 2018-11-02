@@ -23,8 +23,8 @@ public class Alphabet<E> implements Hashable<E> {
 	 * alphabets> and return the key of for the slot for which the value can be inserted.
 	 * @return an integer value.
 	 * 
-	 * This is so simple my a non-programmer will be able to tell what this line [return ((int)getCh()) % 26;]
-	 * is doing from his sleep.
+	 * This is so simple my a non-programming friends will be able to tell what this line [return ((int)getCh()) % 26;]
+	 * is doing from their sleep.
 	 */
 	@Override
 	public int hash() {
