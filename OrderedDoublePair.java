@@ -1,5 +1,5 @@
-
- * OrderedDoublePair.java class contains:
+/**
+ ** OrderedDoublePair.java class contains:
  	 * default constructor
  	 * 
  	 *Constructor which takes in integer values public OrderedDoublePair(int x, int y) 
@@ -77,11 +77,11 @@ public class OrderedDoublePair {
 	}
 
 	public boolean equals(Object points){
-		return (points instanceof OrderedDoublePair && (this.x == ((OrderedDoublePair)points).x) && (this.y == ((OrderedDoublePair)points).y));
+		return (points instanceof OrderedDoublePair && (this.x ==((OrderedDoublePair)points).x) && ((this.y) == ((OrderedDoublePair)points).y));
 	}
 	
 	public boolean equalsIgnoreOrder(Object points){
-		return (points instanceof OrderedDoublePair && (this.x == ((OrderedDoublePair)points).y) && (this.y == ((OrderedDoublePair)points).x));
+		return (points instanceof OrderedDoublePair && (this.x + this.y) == (((OrderedDoublePair)points).x) + (((OrderedDoublePair)points).y));
 	}
 	
 	public String toString(){
@@ -97,4 +97,10 @@ public class OrderedDoublePair {
         return 31 * result + (int) (temp ^ (temp >>>  32));
     }
 	
+    public static void main(String[] args) {
+		OrderedDoublePair point1 = new OrderedDoublePair(3.0, 2.0);
+		OrderedDoublePair point2 = new OrderedDoublePair(3.0, 2.0);
+		System.out.println(OrderedDoublePair.ORIGIN);
+		System.out.println(point1.equals(point2));
+	}
 }
