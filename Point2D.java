@@ -42,7 +42,8 @@ public class Point2D extends OrderedDoublePair {
 		int xCount = 0, yCount = 0;
 		double sumX = 0, sumY = 0;
 		for(int i = 0; i < points.size(); i++){
-			sumX += points.getUnilinkedListData().getX();  ; sumY += points.getUnilinkedListData().getY(); //re-implement this method
+			sumX += points.getUnilinkedListData().getX(); 
+			sumY += points.getUnilinkedListData().getY(); //re-implement this method
 			xCount++; yCount++;
 		}
 		c = new OrderedDoublePair((sumX / xCount), (sumY / yCount));
